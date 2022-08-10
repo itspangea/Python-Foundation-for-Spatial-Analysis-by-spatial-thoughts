@@ -1,0 +1,27 @@
+def dms_to_decimal(degrees, minutes, seconds):
+    if degrees < 0:
+        result = degrees - minutes/60 - seconds/3600
+    else:
+        result = degrees + minutes/60 + seconds/3600
+    return result
+
+coordinate = '''37° 46' 26.2992"'''
+koordinat = ''' '''
+for i in coordinate :
+    if (i =='°' or i == "'") or i== '"':
+        continue
+    else :
+        koordinat += i
+koordinat_list = koordinat.split()
+new_koor=[]
+for j in koordinat_list :
+    k= float (j)
+    new_koor.append(k)
+
+output = dms_to_decimal (new_koor[0],new_koor[1],new_koor[2])
+print (output)
+
+
+# Add the code below to extract the parts from the coordinate string,
+# call the function to convert to decimal degrees and print the result
+# The expected answer is 37.773972
