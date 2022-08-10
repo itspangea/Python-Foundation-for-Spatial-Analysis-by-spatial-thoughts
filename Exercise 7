@@ -1,0 +1,9 @@
+from geopy import distance
+
+Jakarta = (-6.20000, 106.816666 )
+aachen = (50.775555,6.083611 )
+
+straight_line_distance = distance.great_circle(Jakarta, aachen)
+ellipsoid_distance = distance.geodesic(san_francisco, new_york, ellipsoid='WGS-84')
+
+print(straight_line_distance, ellipsoid_distance)
